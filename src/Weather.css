@@ -1,0 +1,73 @@
+
+  .container {
+    background-color: #55a0d4;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px #00000029;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+  }
+  
+  /* Stilul pentru titlu */
+  h1 {
+    font-size: px;
+    font-weight: bold;
+    margin: 0 0 20px;
+    text-align: center;
+  }
+  p {
+    font-size: 20px;
+  }
+  
+  /* Stilul pentru imagine */
+  img {
+    display: block;
+    margin: 30px auto;
+    min-width: 90px;
+    min-height: 100px;
+  }
+  
+  /* Stilul pentru descriere */
+  p.description {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  
+  /* Stilul pentru temperatură */
+  p.temperature {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0 0 20px;
+    text-align: center;
+  }
+  
+  .bodycomponents{
+    display : grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .forecast24h {
+    background-color: #55a0d4;
+  }
+
+ 
+
+  /* Stilul pentru input */
+  input[type="text"] {
+    background-color: #EFEFF4;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px #00000029;
+    color: #8E8E93;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    width: 95%;
+  }
+  
