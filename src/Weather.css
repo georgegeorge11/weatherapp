@@ -1,25 +1,41 @@
+.weather{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.weatherInformation{
+  display: flex;
+  width: 95%;
+  margin-top: 20px;
+}
+.content{
+  background-color: #55a0d4;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px #00000029;
+  padding: 20px;
+  margin-left: 20px;
+  width: 40%;
+}
 
   .container {
     background-color: #55a0d4;
     color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 3px 10px #00000029;
-    padding: 20px;
-    margin: 20px auto;
-    width: 80%;
+    display: flex;
+  }
+
+  p,h1,h2{
+    font-size: 20px;
   }
   
-  /* Stilul pentru titlu */
   h1 {
-    font-size: px;
+   
     font-weight: bold;
     margin: 0 0 20px;
     text-align: center;
   }
-  p {
-    font-size: 20px;
-  }
-  
+ 
   /* Stilul pentru imagine */
   img {
     display: block;
@@ -30,7 +46,7 @@
   
   /* Stilul pentru descriere */
   p.description {
-    font-size: 24px;
+    /* font-size: 24px; */
     font-weight: bold;
     margin: 0 0 10px;
     text-align: center;
@@ -51,7 +67,19 @@
   }
 
   .forecast24h {
+    width: 64%;
     background-color: #55a0d4;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px #00000029;
+    margin-left: 20px;
+  }
+  .forecast7days {
+    width: 95%;
+    background-color: #55a0d4;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px #00000029;
   }
 
  

@@ -2,6 +2,7 @@ import React, { useState,useEffect } from "react";
 import axios from "axios";
 import './Weather.css';
 import Forecast from "./Forecast";
+import Forecast7days from "./Forecast7days";
 
 const Weather = () => {
 
@@ -41,16 +42,17 @@ const Weather = () => {
     }, [city]);
   
     return (
-       
-  
-           <div className="container">
+       <div className="weather">
+        <div className="weatherInformation">
+          <div className="content">
+        <div className="container">
         <div className="header">
           <h1>{city}</h1>
           {icon && <img src={`https:${icon}`} alt={description} />}
-        </div>
-        <div className="body">
-          <p className="temperature">{temperature}°C</p>
+       
+          <p className="temperature">{Math.round(temperature)}°C</p>
           <p className="description">{description}</p>
+          </div>
          <div className="bodycomponents">
       
           <p>Wind speed: {windSpeed} km/h</p>
@@ -61,17 +63,21 @@ const Weather = () => {
           <p>UV: {uv}</p>
          
          </div>
-        </div>
-        <div className="footer">
+        
+      </div>
+      <div className="footer">
           <input className="input" type="text" value={city} onChange={(e) => setCity(e.target.value)} />
         </div>
-        <div className="forecast24h">
+     
+     </div>
+    <div className="forecast24h">
         <Forecast city={city} />
       </div>
-     
-      </div>
-     
-      
+        </div>
+        <div className="forecast7days">
+          <Forecast7days city={city} />
+        </div>
+        </div>
     );
 
 
