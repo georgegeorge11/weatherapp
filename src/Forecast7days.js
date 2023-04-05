@@ -4,20 +4,38 @@ import './Forecast7days.css';
 
 const Forecast7days = ({city}) =>{
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
 
   useEffect(() => {
     const API_KEY = "1546e52c43544b829f771754230404";
     const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=7`;
 
+    setLoading(true);
+    setError(false);
+
     axios
       .get(API_URL)
       .then((response) => {
         setData(response.data.forecast.forecastday);
+        setLoading(false);
       })
       .catch((error) => {
         console.log(error);
+        setError(true);
+        setLoading(false);
       });
   }, [city]);
+
+  if(loading) {
+    return <div>Loading...</div>
+  }
+  if(error) {
+    return <div>Error loading forecast data</div>
+  }
+  if(city === "") {
+    return <div>No city selected</div>
+  }
 
   const today = new Date();
   const tomorrow = new Date(today);

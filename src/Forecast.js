@@ -4,21 +4,41 @@ import './Forecast.css';
 
 const Forecast = ({city}) =>{
     const [data, setData] = useState([]);
-
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+    
     useEffect(() => {
       const API_KEY = "1546e52c43544b829f771754230404";
       
       const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&hours=24`;
-  
+      setLoading(true);
+      setError(false);
+      
       axios
         .get(API_URL)
         .then((response) => {
           setData(response.data.forecast.forecastday[0].hour);
+          setLoading(false);
         })
         .catch((error) => {
           console.log(error);
+          setError(true);
+          setLoading(false);
         });
     }, [city]);
+
+    if (loading) {
+      return <div>Loading...</div>;
+      }
+      
+      if (error) {
+      return <div>Error loading forecast data</div>;
+      }
+      
+      if (city === "") {
+      return <div>No city selected</div>;
+      }
+
 
     const now = new Date();
     let tommorow = new Date();
