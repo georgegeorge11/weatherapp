@@ -30,6 +30,7 @@ const Forecast = ({city}) =>{
 
     return (
         <div className="hourly-forecast">
+          
         {next24Hours.map((hour) => (
           
           <div key={hour.time_epoch} className="forecast-item-container">

@@ -42,42 +42,38 @@ const Weather = () => {
     }, [city]);
   
     return (
-       <div className="weather">
-        <div className="weatherInformation">
-          <div className="content">
-        <div className="container">
-        <div className="header">
-          <h1>{city}</h1>
+      <div className="content">
+         <div className="container">
+      <div className="weather">
+         <div className="weatherInformation">
+        <div className="temperature">
+        <h1>{city}</h1>
           {icon && <img src={`https:${icon}`} alt={description} />}
-       
           <p className="temperature">{Math.round(temperature)}°C</p>
           <p className="description">{description}</p>
-          </div>
-         <div className="bodycomponents">
-      
-          <p>Wind speed: {windSpeed} km/h</p>
-          <p>Wind direction: {windDirection}</p> 
-          <p>Humidity: {humidity} %</p>
-          <p>Precip : {precip_mm} mm</p>
-          <p>Feels like: {feelslike}°C</p>
-          <p>UV: {uv}</p>
-         
-         </div>
-        
-      </div>
-      <div className="footer">
+        </div>
+        <div className="information">
+        <p>Wind speed: {windSpeed} km/h</p>
+        <p>Wind direction: {windDirection}</p> 
+        <p>Humidity: {humidity} %</p>
+        <p>Precip : {precip_mm} mm</p>
+        <p>Feels like: {feelslike}°C</p>
+        <p>UV: {uv}</p>
+        </div> 
+    </div>
+    <div className="footer">
           <input className="input" type="text" value={city} onChange={(e) => setCity(e.target.value)} />
         </div>
-     
-     </div>
+    </div>
     <div className="forecast24h">
         <Forecast city={city} />
       </div>
-        </div>
-        <div className="forecast7days">
+    </div>
+    <div className="forecast7days">
           <Forecast7days city={city} />
         </div>
-        </div>
+      </div>
+   
     );
 
 
