@@ -9,8 +9,8 @@ const Forecast = ({city}) =>{
     
     useEffect(() => {
       const API_KEY = "1546e52c43544b829f771754230404";
-      
       const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&hours=24`;
+      
       setLoading(true);
       setError(false);
       
@@ -31,11 +31,11 @@ const Forecast = ({city}) =>{
       return <div>Loading...</div>;
       }
       
-      if (error) {
+    if (error) {
       return <div>Error loading forecast data</div>;
       }
       
-      if (city === "") {
+    if (city === "") {
       return <div>No city selected</div>;
       }
 

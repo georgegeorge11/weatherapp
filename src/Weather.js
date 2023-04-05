@@ -22,7 +22,6 @@ const Weather = () => {
   
     useEffect(() => {
      
-      
       const API_KEY = "1546e52c43544b829f771754230404"; 
       const API_URL = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`;
   
@@ -44,8 +43,7 @@ const Weather = () => {
       axios
         .get(API_URL)
         .then((response) => {
-            // Verificam daca orașul este valid pe baza răspunsului API-ului
-      
+            
         const { temp_c, condition, condition: { icon },wind_kph, feelslike_c,
         wind_dir,humidity, uv, precip_mm} = response.data.current;
         setTemperature(temp_c);
@@ -60,6 +58,7 @@ const Weather = () => {
         setError(false);
         })
         .catch((error) => {
+          
           console.log(error);
           setError(true);
           setTemperature("");
