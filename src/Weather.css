@@ -7,13 +7,13 @@
 
 .container{
   display: flex;
+
 }
 
 .weather{
   margin: 10px 20px 20px;
   display: grid;
   width: 25%;
-
   background-color: #55a0d4;
   border-radius: 15px;
   box-shadow: 0px 3px 10px #00000029;
@@ -61,7 +61,7 @@ p,h1{
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
 }
 
@@ -123,4 +123,134 @@ input[type="text"] {
   padding: 10px;
   text-align: center;
   width: 95%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .container{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .weather{
+    width: 95%;
+    margin: 10px 0px 20px;
+  }
+
+  .forecast24h {
+    width: 95%;
+    margin: 10px 0px 20px;
+  }
+
+  .forecast7days {
+    width: 95%;
+    margin: 10px 10px 10px;
+  }
+
+  .temperature{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  p,h1{
+    font-size: 22px;
+    margin: 5px 10px 10px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  img {
+    min-width: 80px;
+    min-height: 80px;
+  }
+
+  p.temperature{
+    font-size: 32px;
+    
+  }
+  p.description{
+    font-size: 18px;
+  
+  }
+
+  .information > p {
+    font-size: 14px;
+  }
+
+  #wind {
+    flex-direction: column;
+  }
+
+  .wind-direction {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  .content {
+    height: auto;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .weather {
+    width: 95%;
+    margin: 10px 10px;
+  }
+
+  .forecast24h {
+    width: 95%;
+    margin: 10px 10px;
+  }
+
+  .forecast7days {
+    width: 95%;
+    margin: 10px 10px;
+  }
+
+  .temperature {
+    width: 100%;
+    text-align: center;
+  }
+
+  p,
+  h1 {
+    font-size: 24px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  p.temperature {
+    font-size: 30px;
+  }
+
+  p.description {
+    font-size: 20px;
+  }
+
+  .information > p {
+    font-size: 16px;
+  }
+
+  #wind {
+    flex-direction: row;
+  }
+
+  .wind-direction {
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  input[type="text"] {
+    font-size: 20px;
+  }
 }

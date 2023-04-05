@@ -6,7 +6,7 @@ import Forecast7days from "./Forecast7days";
 
 const Weather = () => {
 
-    const [city, setCity] = useState("Galați"); // setați orașul de afișat
+    const [city, setCity] = useState("Galați"); 
     const [temperature, setTemperature] = useState("");
     const [description, setDescription] = useState("");
     const [icon, setIcon] = useState("");
@@ -18,7 +18,7 @@ const Weather = () => {
     const [precip_mm, setPrecip_mm] = useState("");
   
     useEffect(() => {
-      const API_KEY = "1546e52c43544b829f771754230404"; // înlocuiți cu cheia API de la WeatherAPI
+      const API_KEY = "1546e52c43544b829f771754230404"; 
       const API_URL = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}`;
   
       axios

@@ -26,13 +26,10 @@ const Forecast = ({city}) =>{
     const currentIndex = data.findIndex((hour) => new Date(hour.time) >= now );
     const current = data.findIndex((hour) => new Date(hour.time) < tommorow );
     const next24Hours = data.slice(currentIndex,currentIndex+24).concat(data.slice(current,currentIndex)) ;
-    console.log(tommorow)
 
     return (
         <div className="hourly-forecast">
-          
         {next24Hours.map((hour) => (
-          
           <div key={hour.time_epoch} className="forecast-item-container">
             <p className="hour">{hour.time.slice(10, 16)}</p>
             <img src={`https:${hour.condition.icon}`} alt={hour.condition.text} />
